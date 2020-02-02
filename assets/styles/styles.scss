@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
+/* --- Sass Variables --- */
+
+$darkGrey : rgb(61, 61, 61);
+$offWhite : rgb(233, 233, 233);
+
+/* --- Sass Mixins --- */
+
+@mixin flex ($direction, $content) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+}
+
 /* --- CSS Reset --- */
 
 * {
@@ -19,15 +32,19 @@ body {
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: rgb(141, 195, 204);
-    display: flex;
-    flex-direction: column;
+    @include flex(column, start);
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
 }
 
 /* --- Main Nav Styles --- */
 
 nav {
-    display: flex;
-    justify-content: space-around;
+    @include flex(row, space-around);
     padding: 20px;
 }
 .logo-container {
@@ -35,46 +52,40 @@ nav {
     width: 40%;
 }
 #logo {
-    background-color: rgb(61, 61, 61);
+    background-color: $darkGrey;
     border-radius: 50%;
-    color: rgb(233, 233, 233);
+    color: $offWhite;
     font-family: 'Pacifico', cursive;
     font-size: 1.4em;
     font-weight: lighter;
     padding: 10px 12px;
     text-align: center;
-    text-decoration: none;
     width: 60px;
 }
 .nav-container {
-    display: flex;
-    justify-content: flex-end;
+    @include flex(row, flex-end);
     width: 60%;
 }
 #nav-links {
     display: none;
 }
-li {
-    list-style: none;
-}
 nav li a {
     border-bottom: 1px solid transparent;
-    color: rgb(61, 61, 61);
+    color: $darkGrey;
     font-weight: lighter;
     padding-bottom: 2px;
     margin: 10px 40px;
-    text-decoration: none;
     transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
-}
-nav li a:hover {
-    border-bottom: 3px solid rgb(61, 61, 61);
-    font-size: 1.1em;
+    &:hover {
+        border-bottom: 3px solid $darkGrey;
+        font-size: 1.1em;
+    }
 }
 #nav-symbol {
     cursor: pointer;
 }
 .line {
-    background-color: rgb(61, 61, 61);
+    background-color: $darkGrey;
     border-radius: 5px;
     height: 4px;
     margin: 6px;
@@ -84,13 +95,13 @@ nav li a:hover {
 /* --- Header Styles --- */
 
 h1 {
-    color: rgb(61, 61, 61);
+    color: $darkGrey;
     font-weight: lighter;
     padding: 20px;
     text-align: center;
 }
 h4 {
-    color: rgb(233, 233, 233);
+    color: $offWhite;
     font-size: 1.2em;
     text-align: center;
 }
@@ -104,34 +115,32 @@ aside #social-links {
 /* --- Footer Styles ---- */
 
 footer {
-    background-color: rgb(61, 61, 61);
-    color: rgb(233, 233, 233);
+    background-color: $darkGrey;
+    color: $offWhite;
     font-size: 0.8em;
     font-weight: lighter;
     margin-top: auto;
     padding: 10px;
     text-align: center;
     width: 100%;
-}
-footer #social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 10px auto;
-    width: 50%;
+    #social-links {
+        @include flex(row, space-around);
+        margin: 10px auto;
+        width: 50%;
+    }
+    p {
+        padding: 8px 0 10px;
+        vertical-align: text-bottom;
+    }
 }
 .link-icon {
     height: 40px;
     padding: 6px;
     width: 40px;
-}
-.link-icon:hover {
-    height: 45px;
-    width: 45px;
-}
-footer p {
-    padding: 8px 0 10px;
-    vertical-align: text-bottom;
+    &:hover {
+        height: 45px;
+        width: 45px;
+    }
 }
 
 /* --- Media Queries --- */
@@ -141,8 +150,7 @@ footer p {
         display: none;
     }
     aside #social-links {
-        display: flex;
-        flex-direction: column;
+        @include flex(column, start);
         left: 25px;
         top: 50px;
         position: absolute;
@@ -153,11 +161,11 @@ footer p {
         padding: 0;
         transition: all 500ms ease-in-out;
         width: 40px;
-    }
-    .link-icon:hover {
-        height: 45px;
-        transform: rotate(360deg);
-        width: 45px;
+        &:hover {
+            height: 45px;
+            transform: rotate(360deg);
+            width: 45px;
+        }
     }
 }
 @media (min-width: 1024px) {
@@ -165,7 +173,6 @@ footer p {
         display: none;
     }
     #nav-links {
-        display: flex;
-        justify-content: space-around;
+        @include flex(row, space-around);
     }
 }
