@@ -1,9 +1,108 @@
-body {
-    background-color: tomato;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400&display=swap');
+
+/* --- CSS Reset --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-section {
-    margin: 0 auto 100px;
-    width: 900px;
+
+/* --- Base Styles --- */
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: rgb(141, 195, 204);
+}
+
+/* --- Main Nav Styles --- */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.logo-container {
+    width: 40%;
+}
+h3 {
+    font-weight: lighter;
+    padding-left: 40px;
+}
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+}
+#nav-links {
+    display: none;
+}
+li {
+    list-style: none;
+}
+nav a {
+    border-bottom: 1px solid transparent;
+    color: rgb(61, 61, 61);
+    font-weight: lighter;
+    padding-bottom: 2px;
+    margin: 10px 40px;
+    text-decoration: none;
+    transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
+}
+nav a:hover {
+    border-bottom: 3px solid rgb(61, 61, 61);
+    font-size: 1.1em;
+}
+#nav-symbol {
+    cursor: pointer;
+}
+.line {
+    background-color: rgb(61, 61, 61);
+    border-radius: 5px;
+    height: 4px;
+    margin: 6px;
+    width: 38px;
+}
+
+/* --- Header Styles --- */
+
+h1 {
+    color: rgb(61, 61, 61);
+    font-weight: lighter;
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- Social Links Nav --- */
+
+#social-links ul{
+    display: flex;
+    flex-direction: column;
+    left: 25px;
+    top: 50px;
+    position: absolute;
+    z-index: 1;
+}
+.link-icon {
+    height: 40px;
+    transition: all 500ms ease-in-out;
+    width: 40px;
+}
+.link-icon:hover {
+    height: 45px;
+    transform: rotate(360deg);
+    width: 45px;
+}
+
+/* --- Media Queries --- */
+
+@media (min-width: 1024px) {
+    .line {
+        display: none;
+    }
+    #nav-links {
+        display: flex;
+        justify-content: space-around;
+    }
 }
