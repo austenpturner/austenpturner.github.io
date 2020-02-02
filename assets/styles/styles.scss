@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 /* --- CSS Reset --- */
 
@@ -11,9 +12,15 @@
 
 /* --- Base Styles --- */
 
+html, 
+body {
+    height: 100%;
+}
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: rgb(141, 195, 204);
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Main Nav Styles --- */
@@ -24,11 +31,20 @@ nav {
     padding: 20px;
 }
 .logo-container {
+    margin-top: 10px;
     width: 40%;
 }
-h3 {
+#logo {
+    background-color: rgb(61, 61, 61);
+    border-radius: 50%;
+    color: rgb(233, 233, 233);
+    font-family: 'Pacifico', cursive;
+    font-size: 1.4em;
     font-weight: lighter;
-    padding-left: 40px;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
 }
 .nav-container {
     display: flex;
@@ -41,7 +57,7 @@ h3 {
 li {
     list-style: none;
 }
-nav a {
+nav li a {
     border-bottom: 1px solid transparent;
     color: rgb(61, 61, 61);
     font-weight: lighter;
@@ -50,7 +66,7 @@ nav a {
     text-decoration: none;
     transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
 }
-nav a:hover {
+nav li a:hover {
     border-bottom: 3px solid rgb(61, 61, 61);
     font-size: 1.1em;
 }
@@ -73,30 +89,77 @@ h1 {
     padding: 20px;
     text-align: center;
 }
+h4 {
+    color: rgb(233, 233, 233);
+    font-size: 1.2em;
+    text-align: center;
+}
 
 /* --- Social Links Nav --- */
 
-#social-links ul{
+aside #social-links {
+    display: none;
+}
+
+/* --- Footer Styles ---- */
+
+footer {
+    background-color: rgb(61, 61, 61);
+    color: rgb(233, 233, 233);
+    font-size: 0.8em;
+    font-weight: lighter;
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+footer #social-links {
     display: flex;
-    flex-direction: column;
-    left: 25px;
-    top: 50px;
-    position: absolute;
-    z-index: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px auto;
+    width: 50%;
 }
 .link-icon {
     height: 40px;
-    transition: all 500ms ease-in-out;
+    padding: 6px;
     width: 40px;
 }
 .link-icon:hover {
     height: 45px;
-    transform: rotate(360deg);
     width: 45px;
+}
+footer p {
+    padding: 8px 0 10px;
+    vertical-align: text-bottom;
 }
 
 /* --- Media Queries --- */
 
+@media (min-width: 568px) {
+    footer #social-links {
+        display: none;
+    }
+    aside #social-links {
+        display: flex;
+        flex-direction: column;
+        left: 25px;
+        top: 50px;
+        position: absolute;
+        z-index: 1;
+    }
+    .link-icon {
+        height: 40px;
+        padding: 0;
+        transition: all 500ms ease-in-out;
+        width: 40px;
+    }
+    .link-icon:hover {
+        height: 45px;
+        transform: rotate(360deg);
+        width: 45px;
+    }
+}
 @media (min-width: 1024px) {
     .line {
         display: none;
