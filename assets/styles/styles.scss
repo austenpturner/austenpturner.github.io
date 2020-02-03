@@ -24,15 +24,17 @@ $offWhite : rgb(233, 233, 233);
 }
 
 /* --- Base Styles --- */
-
-html, 
+ 
 body {
+    @include flex(column, start);
+    background-color: rgb(141, 195, 204);
+    font-family: 'Noto Sans JP', sans-serif;
     height: 100%;
 }
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: rgb(141, 195, 204);
-    @include flex(column, start);
+#page-content {
+    max-width: 100%;
+    height: calc(100vh - 121px);
+    overflow-x: hidden;
 }
 li {
     list-style: none;
@@ -67,19 +69,35 @@ nav {
     width: 60%;
 }
 #nav-links {
-    display: none;
-}
-nav li a {
-    border-bottom: 1px solid transparent;
-    color: $darkGrey;
-    font-weight: lighter;
-    padding-bottom: 2px;
-    margin: 10px 40px;
-    transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
-    &:hover {
-        border-bottom: 3px solid $darkGrey;
-        font-size: 1.1em;
+    @include flex(column, space-around);
+    background-color: $darkGrey;
+    position: absolute;
+    right: -20px;
+    height: calc(100vh - 209px);
+    top: 70px;
+    width: 100vw;
+    right: calc(-100vw - 20px);
+    // right: -20px;
+    transition: right 1000ms ease-in-out;
+    z-index: 1;
+    li {
+        margin: 0 auto;
+        a {
+            border-bottom: 1px solid transparent;
+            color: $offWhite;
+            font-weight: lighter;
+            padding-bottom: 2px;
+            margin: 10px 40px;
+            transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
+            &:hover {
+                border-bottom: 3px solid $offWhite;
+                font-size: 1.1em;
+            }
+        }
     }
+}
+.slide-left {
+    right: -20px;
 }
 #nav-symbol {
     cursor: pointer;
@@ -146,6 +164,12 @@ footer {
 /* --- Media Queries --- */
 
 @media (min-width: 568px) {
+    #page-content {
+        height: calc(100vh - 57px);
+    }
+    #nav-links {
+        height: calc(100vh - 147px);
+    }
     footer #social-links {
         display: none;
     }
@@ -173,6 +197,16 @@ footer {
         display: none;
     }
     #nav-links {
-        @include flex(row, space-around);
+        background-color: rgb(141, 195, 204);
+        border: none;
+        @include flex(row, flex-end);
+        position: static;
+        height: 69px;
+        li a {
+            color: $darkGrey;
+            &:hover {
+                border-bottom: 3px solid $darkGrey; 
+            }
+        }
     }
 }
