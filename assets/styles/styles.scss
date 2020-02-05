@@ -5,6 +5,7 @@
 
 $darkGrey : rgb(61, 61, 61);
 $offWhite : rgb(233, 233, 233);
+$lightBlue : rgb(161, 200, 207);
 
 /* --- Sass Mixins --- */
 
@@ -27,7 +28,7 @@ $offWhite : rgb(233, 233, 233);
  
 body {
     @include flex(column, start);
-    background-color: rgb(141, 195, 204);
+    background-color: $lightBlue;
     font-family: 'Noto Sans JP', sans-serif;
     height: 100%;
 }
@@ -70,16 +71,14 @@ nav {
 }
 #nav-links {
     @include flex(column, space-around);
-    background-color: $darkGrey;
+    // background-color: $darkGrey;
+    background-image: radial-gradient(rgba(95, 95, 95, 0.9), rgba(61, 61, 61, 0.9));
     position: absolute;
-    right: -20px;
     height: calc(100vh - 209px);
     top: 70px;
     width: 100vw;
-    right: calc(-100vw - 20px);
-    // right: -20px;
     transition: right 1000ms ease-in-out;
-    z-index: 1;
+    z-index: 2;
     li {
         margin: 0 auto;
         a {
@@ -98,6 +97,9 @@ nav {
 }
 .slide-left {
     right: -20px;
+}
+.slide-right {
+    right: calc(-100vw - 20px);
 }
 #nav-symbol {
     cursor: pointer;
@@ -197,7 +199,7 @@ footer {
         display: none;
     }
     #nav-links {
-        background-color: rgb(141, 195, 204);
+        background-color: $lightBlue;
         border: none;
         @include flex(row, flex-end);
         position: static;
