@@ -71,8 +71,8 @@ nav {
 }
 #nav-links {
     @include flex(column, space-around);
-    // background-color: $darkGrey;
-    background-image: radial-gradient(rgba(95, 95, 95, 0.9), rgba(61, 61, 61, 0.9));
+    background-color: $darkGrey;
+    // background-image: radial-gradient(rgba(95, 95, 95, 0.9), rgba(61, 61, 61, 0.9));
     position: absolute;
     height: calc(100vh - 209px);
     top: 70px;
@@ -114,17 +114,49 @@ nav {
 
 /* --- Header Styles --- */
 
-h1 {
-    color: $darkGrey;
-    font-weight: lighter;
-    padding: 20px;
-    text-align: center;
+header {
+    @include flex(column, space-between);
+    align-items: center;
+    div {
+        margin-top: 50px;
+        h1 {
+            color: $darkGrey;
+            font-weight: lighter;
+            padding: 20px;
+            text-align: center;
+        }
+        h4 {
+            color: $offWhite;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    }
+    .chevron-container {
+        @include flex(column, flex-start);
+        height: 80px;
+        margin: 100px auto 10px;
+        .bounce {
+            animation-name: bounce;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+            100% { transform: translateY(0); }
+        }
+        i {
+            color: $darkGrey;
+            cursor: pointer;
+            &:hover {
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                transform-origin: bottom;
+            }
+        }
+        
+    } 
 }
-h4 {
-    color: $offWhite;
-    font-size: 1.2em;
-    text-align: center;
-}
+
 
 /* --- Social Links Nav --- */
 
