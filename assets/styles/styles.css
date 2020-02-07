@@ -11,6 +11,14 @@
   position: relative;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* --- Base Styles --- */
 body {
   display: -webkit-box;
@@ -23,23 +31,14 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  background-color: #a1c8cf;
+  background-color: #b7d7f0;
   font-family: 'Noto Sans JP', sans-serif;
-  height: 100%;
 }
 
 #page-content {
   max-width: 100%;
-  height: calc(100vh - 121px);
+  min-height: 100vh;
   overflow-x: hidden;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 /* --- Main Nav Styles --- */
@@ -57,18 +56,14 @@ nav {
 }
 
 .logo-container {
-  margin-top: 10px;
   width: 40%;
 }
 
 #logo {
-  background-color: #3d3d3d;
-  border-radius: 50%;
-  color: #e9e9e9;
-  font-family: 'Pacifico', cursive;
-  font-size: 1.4em;
+  color: #3d3d3d;
+  font-size: 1.1em;
   font-weight: lighter;
-  padding: 10px 12px;
+  padding-left: 10px;
   text-align: center;
   width: 60px;
 }
@@ -99,8 +94,8 @@ nav {
       justify-content: space-around;
   background-color: #3d3d3d;
   position: absolute;
-  height: calc(100vh - 209px);
-  top: 70px;
+  height: calc(100vh - 66px);
+  top: 46px;
   width: 100vw;
   -webkit-transition: right 1000ms ease-in-out;
   transition: right 1000ms ease-in-out;
@@ -113,7 +108,7 @@ nav {
 
 #nav-links li a {
   border-bottom: 1px solid transparent;
-  color: #e9e9e9;
+  color: #f0f0f0;
   font-weight: lighter;
   padding-bottom: 2px;
   margin: 10px 40px;
@@ -122,7 +117,7 @@ nav {
 }
 
 #nav-links li a:hover {
-  border-bottom: 3px solid #e9e9e9;
+  border-bottom: 3px solid #f0f0f0;
   font-size: 1.1em;
 }
 
@@ -136,6 +131,10 @@ nav {
 
 #nav-symbol {
   cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: -10px;
+  top: -12px;
 }
 
 .line {
@@ -155,12 +154,12 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: calc(100vh - 66px);
 }
 
 header div {
@@ -175,7 +174,7 @@ header div h1 {
 }
 
 header div h4 {
-  color: #e9e9e9;
+  color: #f0f0f0;
   font-size: 1.2em;
   text-align: center;
 }
@@ -192,7 +191,7 @@ header .chevron-container {
       -ms-flex-pack: start;
           justify-content: flex-start;
   height: 80px;
-  margin: 100px auto 10px;
+  margin: 50px auto 10px;
 }
 
 header .chevron-container .bounce {
@@ -254,7 +253,7 @@ aside #social-links {
 /* --- Footer Styles ---- */
 footer {
   background-color: #3d3d3d;
-  color: #e9e9e9;
+  color: #f0f0f0;
   font-size: 0.8em;
   font-weight: lighter;
   margin-top: auto;
@@ -288,18 +287,10 @@ footer p {
   width: 40px;
 }
 
-.link-icon:hover {
-  height: 45px;
-  width: 45px;
-}
-
 /* --- Media Queries --- */
 @media (min-width: 568px) {
-  #page-content {
-    height: calc(100vh - 57px);
-  }
   #nav-links {
-    height: calc(100vh - 147px);
+    height: calc(100vh - ($navHeight));
   }
   footer #social-links {
     display: none;
@@ -315,33 +306,48 @@ footer p {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    left: 25px;
-    top: 50px;
-    position: absolute;
+    left: 20px;
+    top: 100px;
+    position: fixed;
     z-index: 1;
   }
   .link-icon {
-    height: 40px;
-    padding: 0;
+    height: 32px;
+    padding: 2px;
     -webkit-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
-    width: 40px;
+    width: 32px;
   }
   .link-icon:hover {
-    height: 45px;
+    height: 38px;
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-    width: 45px;
+    width: 38px;
   }
 }
 
 @media (min-width: 1024px) {
+  header {
+    margin-top: 66px;
+  }
+  .link-icon {
+    height: 38px;
+    width: 38px;
+  }
+  .link-icon:hover {
+    height: 42px;
+    width: 42px;
+  }
   .line {
     display: none;
   }
+  nav {
+    left: 0;
+    position: absolute;
+    top: 0;
+    max-width: 100vw;
+  }
   #nav-links {
-    background-color: #a1c8cf;
-    border: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -352,8 +358,10 @@ footer p {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    background-color: #b7d7f0;
+    border: none;
+    height: 26px;
     position: static;
-    height: 69px;
   }
   #nav-links li a {
     color: #3d3d3d;

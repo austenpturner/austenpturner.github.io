@@ -4,8 +4,9 @@
 /* --- Sass Variables --- */
 
 $darkGrey : rgb(61, 61, 61);
-$offWhite : rgb(233, 233, 233);
-$lightBlue : rgb(161, 200, 207);
+$offWhite : rgb(240, 240, 240);
+$lightBlue : rgb(183, 215, 240);
+$navHeight : 66px;
 
 /* --- Sass Mixins --- */
 
@@ -23,20 +24,6 @@ $lightBlue : rgb(161, 200, 207);
     padding: 0;
     position: relative;
 }
-
-/* --- Base Styles --- */
- 
-body {
-    @include flex(column, start);
-    background-color: $lightBlue;
-    font-family: 'Noto Sans JP', sans-serif;
-    height: 100%;
-}
-#page-content {
-    max-width: 100%;
-    height: calc(100vh - 121px);
-    overflow-x: hidden;
-}
 li {
     list-style: none;
 }
@@ -44,79 +31,29 @@ a {
     text-decoration: none;
 }
 
+/* --- Base Styles --- */
+ 
+body {
+    @include flex(column, start);
+    background-color: $lightBlue;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+#page-content {
+    max-width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 /* --- Main Nav Styles --- */
 
-nav {
-    @include flex(row, space-around);
-    padding: 20px;
-}
-.logo-container {
-    margin-top: 10px;
-    width: 40%;
-}
-#logo {
-    background-color: $darkGrey;
-    border-radius: 50%;
-    color: $offWhite;
-    font-family: 'Pacifico', cursive;
-    font-size: 1.4em;
-    font-weight: lighter;
-    padding: 10px 12px;
-    text-align: center;
-    width: 60px;
-}
-.nav-container {
-    @include flex(row, flex-end);
-    width: 60%;
-}
-#nav-links {
-    @include flex(column, space-around);
-    background-color: $darkGrey;
-    // background-image: radial-gradient(rgba(95, 95, 95, 0.9), rgba(61, 61, 61, 0.9));
-    position: absolute;
-    height: calc(100vh - 209px);
-    top: 70px;
-    width: 100vw;
-    transition: right 1000ms ease-in-out;
-    z-index: 2;
-    li {
-        margin: 0 auto;
-        a {
-            border-bottom: 1px solid transparent;
-            color: $offWhite;
-            font-weight: lighter;
-            padding-bottom: 2px;
-            margin: 10px 40px;
-            transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
-            &:hover {
-                border-bottom: 3px solid $offWhite;
-                font-size: 1.1em;
-            }
-        }
-    }
-}
-.slide-left {
-    right: -20px;
-}
-.slide-right {
-    right: calc(-100vw - 20px);
-}
-#nav-symbol {
-    cursor: pointer;
-}
-.line {
-    background-color: $darkGrey;
-    border-radius: 5px;
-    height: 4px;
-    margin: 6px;
-    width: 38px;
-}
+@import "nav";
 
 /* --- Header Styles --- */
 
 header {
-    @include flex(column, space-between);
+    @include flex(column, space-around);
     align-items: center;
+    height: calc(100vh - 66px);
     div {
         margin-top: 50px;
         h1 {
@@ -134,7 +71,7 @@ header {
     .chevron-container {
         @include flex(column, flex-start);
         height: 80px;
-        margin: 100px auto 10px;
+        margin: 50px auto 10px;
         .bounce {
             animation-name: bounce;
             animation-timing-function: ease-in-out;
@@ -153,10 +90,8 @@ header {
                 transform-origin: bottom;
             }
         }
-        
     } 
 }
-
 
 /* --- Social Links Nav --- */
 
@@ -166,76 +101,63 @@ aside #social-links {
 
 /* --- Footer Styles ---- */
 
-footer {
-    background-color: $darkGrey;
-    color: $offWhite;
-    font-size: 0.8em;
-    font-weight: lighter;
-    margin-top: auto;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    #social-links {
-        @include flex(row, space-around);
-        margin: 10px auto;
-        width: 50%;
-    }
-    p {
-        padding: 8px 0 10px;
-        vertical-align: text-bottom;
-    }
-}
-.link-icon {
-    height: 40px;
-    padding: 6px;
-    width: 40px;
-    &:hover {
-        height: 45px;
-        width: 45px;
-    }
-}
+@import "footer";
 
 /* --- Media Queries --- */
 
 @media (min-width: 568px) {
-    #page-content {
-        height: calc(100vh - 57px);
-    }
     #nav-links {
-        height: calc(100vh - 147px);
+        height: calc(100vh - ($navHeight));
     }
     footer #social-links {
         display: none;
     }
     aside #social-links {
         @include flex(column, start);
-        left: 25px;
-        top: 50px;
-        position: absolute;
+        left: 20px;
+        top: 100px;
+        position: fixed;
         z-index: 1;
     }
     .link-icon {
-        height: 40px;
-        padding: 0;
+        height: 32px;
+        padding: 2px;
         transition: all 500ms ease-in-out;
-        width: 40px;
+        width: 32px;
         &:hover {
-            height: 45px;
+            height: 38px;
             transform: rotate(360deg);
-            width: 45px;
+            width: 38px;
         }
     }
 }
 @media (min-width: 1024px) {
+    header {
+        margin-top: $navHeight;
+    }
+    .link-icon {
+        height: 38px;
+        width: 38px;
+        &:hover {
+            height: 42px;
+            width: 42px;
+        }
+    }
     .line {
         display: none;
     }
+    nav {
+        left: 0;
+        position: absolute;
+        top: 0;
+        max-width: 100vw;
+    }
     #nav-links {
+        @include flex(row, flex-end);
         background-color: $lightBlue;
         border: none;
-        @include flex(row, flex-end);
+        height: 26px;
         position: static;
-        height: 69px;
         li a {
             color: $darkGrey;
             &:hover {

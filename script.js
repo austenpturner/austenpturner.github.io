@@ -1,6 +1,7 @@
 // DOM Elements
 const navSymbol = $('#nav-symbol');
 
+// Slide nav on and off screen
 navSymbol.click(function() {
     if ($(this).prev().hasClass('slide-right')) {
         $(this).prev().removeClass('slide-right').addClass('slide-left');

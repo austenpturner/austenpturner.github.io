@@ -1,0 +1,64 @@
+nav {
+    @include flex(row, space-around);
+    padding: 20px;
+}
+.logo-container {
+    width: 40%;
+}
+#logo {
+    color: $darkGrey;
+    font-size: 1.1em;
+    font-weight: lighter;
+    padding-left: 10px;
+    text-align: center;
+    width: 60px;
+}
+.nav-container {
+    @include flex(row, flex-end);
+    width: 60%;
+}
+#nav-links {
+    @include flex(column, space-around);
+    background-color: $darkGrey;
+    position: absolute;
+    height: calc(100vh - 66px);
+    top: 46px;
+    width: 100vw;
+    transition: right 1000ms ease-in-out;
+    z-index: 2;
+    li {
+        margin: 0 auto;
+        a {
+            border-bottom: 1px solid transparent;
+            color: $offWhite;
+            font-weight: lighter;
+            padding-bottom: 2px;
+            margin: 10px 40px;
+            transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
+            &:hover {
+                border-bottom: 3px solid $offWhite;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+.slide-left {
+    right: -20px;
+}
+.slide-right {
+    right: calc(-100vw - 20px);
+}
+#nav-symbol {
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: -10px;
+    top: -12px;
+}
+.line {
+    background-color: $darkGrey;
+    border-radius: 5px;
+    height: 4px;
+    margin: 6px;
+    width: 38px;
+}

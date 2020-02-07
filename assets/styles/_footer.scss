@@ -1,0 +1,24 @@
+footer {
+    background-color: $darkGrey;
+    color: $offWhite;
+    font-size: 0.8em;
+    font-weight: lighter;
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    #social-links {
+        @include flex(row, space-around);
+        margin: 10px auto;
+        width: 50%;
+    }
+    p {
+        padding: 8px 0 10px;
+        vertical-align: text-bottom;
+    }
+}
+.link-icon {
+    height: 40px;
+    padding: 6px;
+    width: 40px;
+}
