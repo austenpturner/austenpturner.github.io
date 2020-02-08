@@ -245,6 +245,113 @@ header .chevron-container i:hover {
           transform-origin: bottom;
 }
 
+/* --- About Section --- */
+#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: lighter;
+  height: 100vh;
+  margin: 0 auto;
+  width: 85%;
+}
+
+#about h2 {
+  font-size: 1.8em;
+  font-weight: lighter;
+  padding: 8px 5px;
+}
+
+#about div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px auto;
+}
+
+#about div p {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #3d3d3d;
+  border-radius: 5px;
+  color: #f0f0f0;
+  font-weight: lighter;
+  height: 370px;
+  padding: 20px;
+}
+
+#about div img {
+  border-radius: 50%;
+  height: 250px;
+  margin: -113px auto 0;
+  width: 250px;
+}
+
+#about .chevron-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 80px;
+  margin: 20px auto;
+}
+
+#about .chevron-container .bounce {
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+#about .chevron-container i {
+  color: #3d3d3d;
+  cursor: pointer;
+}
+
+#about .chevron-container i:hover {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
 /* --- Social Links Nav --- */
 aside #social-links {
   display: none;
@@ -288,9 +395,29 @@ footer p {
 }
 
 /* --- Media Queries --- */
+@media (min-height: 400px) {
+  #about {
+    width: 80%;
+  }
+  #about div p {
+    height: 320px;
+  }
+}
+
 @media (min-width: 568px) {
+  header {
+    height: 100vh;
+  }
   #nav-links {
     height: calc(100vh - ($navHeight));
+  }
+  #about {
+    width: 70%;
+  }
+  #about div img {
+    height: 280px;
+    margin-top: -128px;
+    width: 280px;
   }
   footer #social-links {
     display: none;
@@ -323,6 +450,20 @@ footer p {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
     width: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  #about {
+    width: 70%;
+  }
+  #about div p {
+    font-size: 1.1em;
+  }
+  #about div img {
+    height: 300px;
+    margin-top: -136px;
+    width: 300px;
   }
 }
 
@@ -368,6 +509,96 @@ footer p {
   }
   #nav-links li a:hover {
     border-bottom: 3px solid #3d3d3d;
+  }
+  #about {
+    width: 70%;
+  }
+  #about div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #about div p {
+    height: 280px;
+  }
+  #about div img {
+    margin-left: -150px;
+    margin-top: 142px;
+  }
+  #about .chevron-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 80px;
+    margin: 20px auto;
+  }
+  #about .chevron-container .bounce {
+    -webkit-animation-name: bounce;
+            animation-name: bounce;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  @-webkit-keyframes bounce {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @keyframes bounce {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  #about .chevron-container i {
+    color: #3d3d3d;
+    cursor: pointer;
+  }
+  #about .chevron-container i:hover {
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+  }
+}
+
+@media (min-width: 1200px) {
+  #about {
+    width: 65%;
+  }
+  #about div p {
+    padding: 25px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
