@@ -1,6 +1,6 @@
 #about {
     font-weight: lighter;
-    height: 100vh;
+    // height: 100vh;
     margin: 40px auto 10px;
     width: 90%;
     h2 {
@@ -100,9 +100,6 @@
 @media (min-width: 1024px) {
     #about {
         width: 70%;
-        .chevron-container {
-            @include chevron-styles(20px auto);
-        }
     }
 }
 
