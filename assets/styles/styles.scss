@@ -15,6 +15,7 @@ $navHeight : 66px;
     flex-direction: $direction;
     justify-content: $content;
 }
+
 @mixin chevron-styles ($margin) {
     @include flex(column, flex-start);
     height: 80px;
@@ -76,13 +77,17 @@ body {
 
 @import "header";
 
-// ----- ABOUT STYLES ----- //
+// ----- ABOUT SECTION STYLES ----- //
 
 @import "about";
 
-// ----- PORTFOLIO STYLES ----- //
+// ----- PORTFOLIO SECTION STYLES ----- //
 
 @import "portfolio";
+
+// ----- CONTACT PAGE STYLES ----- //@extend
+
+@import "contact";
 
 // ----- SOCIAL LINKS STYLES ----- //
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+    <div class="form-container">
+      <div id='header'>
+        <h1>Contact Me!</h1>
+        <h4>Please enter your information and a message to send</h4>
+      <div>
+      
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName"/>
+                <p class="error-msg" id="firstName-error">Please enter a valid name</p>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName"/>
+                <p class="error-msg" id="lastName-error">Please enter a valid name</p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"/>
+                <p class="error-msg" id="email-error">Please enter a valid email</p>
+            </div>
+            <div class="form-group">
+                <label for="msg">Message</label>
+                <textarea type="text" name="msg" id="msg"></textarea>
+                <p class="error-msg" id="msg-error">Please enter a valid message</p>
+            </div>
+        </form>
+        
+        <div class="button-container">
+            <button type="submit" id="submit-btn">Send Message</button>
+            <p id="form-error">Please fix invalid fields</p>
+            <p id="form-success">Success!</p>
+        </div>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>
