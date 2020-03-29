@@ -2,13 +2,6 @@
 
 $turquoise: rgb(100, 215, 255);
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
 body {
   background-image: radial-gradient(rgb(180, 180, 180), rgb(61, 61, 61));
   font-family: 'Open Sans', sans-serif;
@@ -18,8 +11,8 @@ body {
   background-color: white;
   border: 2px solid rgb(61, 61, 61);
   border-radius: 0.5em;
-  margin: 20px auto;
-  width: 50%;
+  margin: 20px auto 10px;
+  width: 90%;
 }
 
 #header {
@@ -28,7 +21,11 @@ body {
   h1,
   h4 {
     font-weight: lighter;
-    padding: 0.2em;
+    padding: 0.3em;
+  }
+  h4 {
+      margin: 0px auto;
+      width: 86%;
   }
 }
 
@@ -45,18 +42,18 @@ form {
     label,
     input,
     textarea {
-        width: 60%;
-        margin: 2px auto;
+        width: 80%;
+        margin: 0px auto;
     }
     label {
-        padding: 0.8em;
+        padding: 0.6em;
         text-align: left;
     }
     input,
     textarea {
         border: 2px solid $turquoise;
         border-radius: 5em;
-        font-size: 1em;
+        font-size: 0.9em;
         height: 2.5em;
         padding-left: 1em;
         &:focus {
@@ -64,6 +61,7 @@ form {
         }
     }
     textarea {
+        border-radius: 2em;
         font-family: 'Open Sans', sans-serif;
         height: 80px;
     }
@@ -83,10 +81,9 @@ form {
 }
 
 .button-container {
-    // border-top: 1px solid rgb(61, 61, 61);
     margin: 20px auto;
     text-align: center;
-    width: 50%;
+    width: 80%;
     button {
         background-image: linear-gradient(rgb(150, 260, 260), $turquoise);
         border: 1px solid rgba(180, 180, 180, 0.5);
@@ -96,7 +93,7 @@ form {
         font-family: 'Open Sans', sans-serif;
         font-size: 0.9em;
         font-weight: bolder;
-        padding: 12px 60px;
+        padding: 12px 40px;
         margin: 20px auto;
     }
     #form-error, 
@@ -118,4 +115,40 @@ form {
         background-color: rgb(61, 231, 61);
         border: 2px solid rgb(10, 158, 10);
     }
+}
+
+@media (min-width: 1024px) {
+    .form-container {
+        width: 50%;
+      }
+      
+      #header {
+        h1,
+        h4 {
+          padding: 0.2em;
+        }
+      }
+      
+      form {
+          label,
+          input,
+          textarea {
+              width: 60%;
+              margin: 2px auto;
+          }
+          label {
+              padding: 0.8em;
+          }
+          input,
+          textarea {
+              font-size: 1em;
+          }
+      }
+      
+      .button-container {
+          width: 50%;
+          button {
+              padding: 12px 60px;
+          }
+      }
 }

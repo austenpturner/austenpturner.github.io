@@ -1,4 +1,4 @@
-DOM Elements
+// DOM Elements
 const navSymbol = document.querySelector('#nav-symbol');
 
 // Slide nav on and off screen

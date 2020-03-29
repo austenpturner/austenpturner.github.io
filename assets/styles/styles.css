@@ -544,14 +544,6 @@ header .chevron-container i:hover {
   }
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
 body {
   background-image: radial-gradient(#b4b4b4, #3d3d3d);
   font-family: 'Open Sans', sans-serif;
@@ -561,8 +553,8 @@ body {
   background-color: white;
   border: 2px solid #3d3d3d;
   border-radius: 0.5em;
-  margin: 20px auto;
-  width: 50%;
+  margin: 20px auto 10px;
+  width: 90%;
 }
 
 #header {
@@ -573,7 +565,12 @@ body {
 #header h1,
 #header h4 {
   font-weight: lighter;
-  padding: 0.2em;
+  padding: 0.3em;
+}
+
+#header h4 {
+  margin: 0px auto;
+  width: 86%;
 }
 
 form {
@@ -605,12 +602,12 @@ form .form-group {
 form label,
 form input,
 form textarea {
-  width: 60%;
-  margin: 2px auto;
+  width: 80%;
+  margin: 0px auto;
 }
 
 form label {
-  padding: 0.8em;
+  padding: 0.6em;
   text-align: left;
 }
 
@@ -618,7 +615,7 @@ form input,
 form textarea {
   border: 2px solid #64d7ff;
   border-radius: 5em;
-  font-size: 1em;
+  font-size: 0.9em;
   height: 2.5em;
   padding-left: 1em;
 }
@@ -629,6 +626,7 @@ form textarea:focus {
 }
 
 form textarea {
+  border-radius: 2em;
   font-family: 'Open Sans', sans-serif;
   height: 80px;
 }
@@ -651,7 +649,7 @@ form #msg-error {
 .button-container {
   margin: 20px auto;
   text-align: center;
-  width: 50%;
+  width: 80%;
 }
 
 .button-container button {
@@ -665,7 +663,7 @@ form #msg-error {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9em;
   font-weight: bolder;
-  padding: 12px 60px;
+  padding: 12px 40px;
   margin: 20px auto;
 }
 
@@ -690,6 +688,35 @@ form #msg-error {
 .button-container #form-success {
   background-color: #3de73d;
   border: 2px solid #0a9e0a;
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    width: 50%;
+  }
+  #header h1,
+  #header h4 {
+    padding: 0.2em;
+  }
+  form label,
+  form input,
+  form textarea {
+    width: 60%;
+    margin: 2px auto;
+  }
+  form label {
+    padding: 0.8em;
+  }
+  form input,
+  form textarea {
+    font-size: 1em;
+  }
+  .button-container {
+    width: 50%;
+  }
+  .button-container button {
+    padding: 12px 60px;
+  }
 }
 
 aside #social-links {
