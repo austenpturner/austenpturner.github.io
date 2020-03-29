@@ -6,8 +6,8 @@ nav {
     width: 40%;
 }
 #logo {
-    color: $darkGrey;
-    font-size: 1.1em;
+    color: $offWhite;
+    font-size: 1em;
     font-weight: lighter;
     padding-left: 10px;
     text-align: center;
@@ -19,7 +19,7 @@ nav {
 }
 #nav-links {
     @include flex(column, space-around);
-    background-color: $darkGrey;
+    background-color: $lightBlue;
     position: absolute;
     height: calc(100vh - 66px);
     top: 46px;
@@ -30,14 +30,15 @@ nav {
         margin: 0 auto;
         a {
             border-bottom: 1px solid transparent;
-            color: $offWhite;
+            color: $darkGrey;
+            font-size: 1.2em;
             font-weight: lighter;
             padding-bottom: 2px;
             margin: 10px 40px;
             transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
             &:hover {
-                border-bottom: 3px solid $offWhite;
-                font-size: 1.1em;
+                border-bottom: 3px solid $darkGrey;
+                font-size: 1.5em;
             }
         }
     }
@@ -56,9 +57,15 @@ nav {
     top: -12px;
 }
 .line {
-    background-color: $darkGrey;
+    background-color: $offWhite;
     border-radius: 5px;
-    height: 4px;
-    margin: 6px;
-    width: 38px;
+    height: 3px;
+    margin: 8px;
+    width: 40px;
+}
+
+@media (min-width: 768px) {
+    #logo {
+        font-size: 1.2em;
+    }
 }

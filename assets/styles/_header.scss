@@ -1,0 +1,51 @@
+header {
+    @include flex(column, space-around);
+    align-items: center;
+    height: calc(100vh - 66px);
+    div {
+        margin-top: 50px;
+        h1 {
+            color: $lightBlue;
+            font-size: 2em;
+            font-weight: lighter;
+            padding: 20px;
+            text-align: center;
+        }
+        h4 {
+            color: $offWhite;
+            font-size: 1.1em;
+            font-weight: lighter;
+            text-align: center;
+        }
+    }
+    .chevron-container {
+        @include chevron-styles(50px auto 10px);
+    } 
+}
+
+// ----- MEDIA QUERIES ----- // 
+
+@media (min-width: 568px) {
+    header {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        div {
+            h1 {
+                font-size: 3em;
+            }
+            h4 {
+                font-size: 1.8em;
+            }
+        }
+    } 
+}
+
+@media (min-width: 1024px) {
+    header {
+        margin-top: $navHeight;
+    }
+}
