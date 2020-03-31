@@ -69,3 +69,30 @@ nav {
         font-size: 1.2em;
     }
 }
+
+@media (min-width: 1024px) {
+    .line {
+        display: none;
+    }
+    nav {
+        left: 0;
+        position: absolute;
+        top: 0;
+        max-width: 100vw;
+    }
+    #nav-links {
+        @include flex(row, flex-end);
+        background-color: $darkGrey;
+        border: none;
+        height: 26px;
+        position: static;
+        li a {
+            color: $offWhite;
+            font-size: 1.1em;
+            &:hover {
+                border-bottom: 2px solid $offWhite;
+                font-size: 1.2em; 
+            }
+        }
+    }
+}

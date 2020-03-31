@@ -22,3 +22,9 @@ footer {
     padding: 6px;
     width: 40px;
 }
+
+@media (min-width: 568px) {
+    footer #social-links {
+        display: none;
+    }
+}
