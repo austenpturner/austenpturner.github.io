@@ -1,68 +1,74 @@
 nav {
-    @include flex(row, space-around);
-    padding: 20px;
-}
-.logo-container {
-    width: 40%;
-}
-#logo {
-    color: $offWhite;
-    font-size: 1em;
-    font-weight: lighter;
-    padding-left: 10px;
-    text-align: center;
-    width: 60px;
-}
-.nav-container {
-    @include flex(row, flex-end);
-    width: 60%;
-}
-#nav-links {
-    @include flex(column, space-around);
-    background-color: $lightBlue;
-    position: absolute;
-    height: calc(100vh - 66px);
-    top: 46px;
-    width: 100vw;
-    transition: right 1000ms ease-in-out;
-    z-index: 2;
-    li {
-        margin: 0 auto;
-        a {
-            border-bottom: 1px solid transparent;
-            color: $darkGrey;
-            font-size: 1.2em;
+    position: relative;
+    #logo-container {
+        background: $darkGrey;
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        #logo {
+            color: $offWhite;
+            font-size: 1em;
             font-weight: lighter;
-            padding-bottom: 2px;
-            margin: 10px 40px;
-            transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
-            &:hover {
-                border-bottom: 3px solid $darkGrey;
-                font-size: 1.5em;
+            padding-left: 10px;
+            text-align: center;
+        }
+        #nav-symbol {
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            z-index: 1;
+        }
+        .line {
+            background-color: $offWhite;
+            border-radius: 5px;
+            height: 3px;
+            margin: 8px;
+            width: 40px;
+        }
+    }
+    #links-container {
+        @include flex(row, flex-end);
+        width: 60%;
+        #nav-links {
+            @include flex(column, space-around);
+            background-color: $lightBlue;
+            position: absolute;
+            height: calc(100vh - 64px);
+            top: 64px;
+            width: 100vw;
+            transition: left 1000ms ease-in-out;
+            z-index: 2;
+            li {
+                margin: 0 auto;
+                a {
+                    border-bottom: 1px solid transparent;
+                    color: $darkGrey;
+                    font-size: 1.2em;
+                    font-weight: lighter;
+                    padding-bottom: 2px;
+                    margin: 10px 40px;
+                    transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
+                    &:hover {
+                        border-bottom: 3px solid $darkGrey;
+                        font-size: 1.5em;
+                    }
+                }
             }
         }
     }
 }
+
 .slide-left {
-    right: -20px;
+    left: 0vw;
 }
 .slide-right {
-    right: calc(-100vw - 20px);
+    left: 100vw;
 }
-#nav-symbol {
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    right: -10px;
-    top: -12px;
-}
-.line {
-    background-color: $offWhite;
-    border-radius: 5px;
-    height: 3px;
-    margin: 8px;
-    width: 40px;
-}
+
 
 @media (min-width: 768px) {
     #logo {
@@ -71,27 +77,41 @@ nav {
 }
 
 @media (min-width: 1024px) {
-    .line {
-        display: none;
-    }
     nav {
+        @include flex(row, space-around);
+        background: $darkGrey;
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
         left: 0;
-        position: absolute;
-        top: 0;
         max-width: 100vw;
-    }
-    #nav-links {
-        @include flex(row, flex-end);
-        background-color: $darkGrey;
-        border: none;
-        height: 26px;
-        position: static;
-        li a {
-            color: $offWhite;
-            font-size: 1.1em;
-            &:hover {
-                border-bottom: 2px solid $offWhite;
-                font-size: 1.2em; 
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        #logo-container {
+            background: $darkGrey;
+            box-shadow: none;
+            position: static;
+            z-index: 0;
+            padding: 0px;
+            #nav-symbol {
+                display: none;
+            }
+        }
+        #links-container {
+            #nav-links {
+                @include flex(row, flex-end);
+                background-color: $darkGrey;
+                border: none;
+                height: 26px;
+                position: static;
+                li a {
+                    color: $offWhite;
+                    font-size: 1.1em;
+                    &:hover {
+                        border-bottom: 2px solid $offWhite;
+                        font-size: 1.2em; 
+                    }
+                }
             }
         }
     }

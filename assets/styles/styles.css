@@ -39,32 +39,45 @@ body a {
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  position: relative;
+}
+
+nav #logo-container {
+  background: #3d3d3d;
+  -webkit-box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
-.logo-container {
-  width: 40%;
-}
-
-#logo {
+nav #logo-container #logo {
   color: #f0f0f0;
   font-size: 1em;
   font-weight: lighter;
   padding-left: 10px;
   text-align: center;
-  width: 60px;
 }
 
-.nav-container {
+nav #logo-container #nav-symbol {
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+nav #logo-container .line {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  height: 3px;
+  margin: 8px;
+  width: 40px;
+}
+
+nav #links-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,7 +91,7 @@ nav {
   width: 60%;
 }
 
-#nav-links {
+nav #links-container #nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,19 +103,19 @@ nav {
       justify-content: space-around;
   background-color: #98fad9;
   position: absolute;
-  height: calc(100vh - 66px);
-  top: 46px;
+  height: calc(100vh - 64px);
+  top: 64px;
   width: 100vw;
-  -webkit-transition: right 1000ms ease-in-out;
-  transition: right 1000ms ease-in-out;
+  -webkit-transition: left 1000ms ease-in-out;
+  transition: left 1000ms ease-in-out;
   z-index: 2;
 }
 
-#nav-links li {
+nav #links-container #nav-links li {
   margin: 0 auto;
 }
 
-#nav-links li a {
+nav #links-container #nav-links li a {
   border-bottom: 1px solid transparent;
   color: #3d3d3d;
   font-size: 1.2em;
@@ -113,33 +126,17 @@ nav {
   transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
 }
 
-#nav-links li a:hover {
+nav #links-container #nav-links li a:hover {
   border-bottom: 3px solid #3d3d3d;
   font-size: 1.5em;
 }
 
 .slide-left {
-  right: -20px;
+  left: 0vw;
 }
 
 .slide-right {
-  right: calc(-100vw - 20px);
-}
-
-#nav-symbol {
-  cursor: pointer;
-  padding: 10px;
-  position: absolute;
-  right: -10px;
-  top: -12px;
-}
-
-.line {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  height: 3px;
-  margin: 8px;
-  width: 40px;
+  left: 100vw;
 }
 
 @media (min-width: 768px) {
@@ -149,16 +146,38 @@ nav {
 }
 
 @media (min-width: 1024px) {
-  .line {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background: #3d3d3d;
+    -webkit-box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+    left: 0;
+    max-width: 100vw;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+  nav #logo-container {
+    background: #3d3d3d;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: static;
+    z-index: 0;
+    padding: 0px;
+  }
+  nav #logo-container #nav-symbol {
     display: none;
   }
-  nav {
-    left: 0;
-    position: absolute;
-    top: 0;
-    max-width: 100vw;
-  }
-  #nav-links {
+  nav #links-container #nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -174,11 +193,11 @@ nav {
     height: 26px;
     position: static;
   }
-  #nav-links li a {
+  nav #links-container #nav-links li a {
     color: #f0f0f0;
     font-size: 1.1em;
   }
-  #nav-links li a:hover {
+  nav #links-container #nav-links li a:hover {
     border-bottom: 2px solid #f0f0f0;
     font-size: 1.2em;
   }
@@ -610,7 +629,7 @@ header .chevron-container i:hover {
   }
   #portfolio #grid .project-container {
     text-align: center;
-    width: 70%;
+    width: 60%;
   }
   #portfolio #grid .project-container .tile .image-container {
     background-color: #f0f0f0;
@@ -666,14 +685,11 @@ header .chevron-container i:hover {
 
 @media (min-width: 768px) {
   #portfolio {
-    font-weight: lighter;
     margin: 40px auto 10px;
     width: 75%;
   }
   #portfolio h2 {
-    color: #98fad9;
     font-size: 3em;
-    font-weight: lighter;
     padding: 8px 5px;
   }
   #portfolio #grid {

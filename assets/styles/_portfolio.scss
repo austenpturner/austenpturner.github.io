@@ -72,29 +72,23 @@
         margin: 40px auto 10px;
         width: 75%;
         h2 {
-            // border: 1px dotted white;
             color: $lightBlue;
             font-size: 2em;
             font-weight: lighter;
             margin: 20px;
             padding: 8px 5px;
-            // text-align: left;
             width: 100%;
         }
         #grid {
-            // border: 1px solid white;
             @include flex(row, center);
             flex-wrap: wrap;
             margin: 0 auto;
             .project-container {
-                // margin: 10px;
                 text-align: center;
-                width: 70%;
+                width: 60%;
                 .tile {
-                    // border: 1px dotted white;
                     .image-container {
                         background-color: $offWhite;
-                        // border: 3px solid $offWhite;
                         height: 260px;
                         overflow-y: hidden;
                         width: 100%;
@@ -104,7 +98,6 @@
                     }
                     .links {
                         @include flex(row, left);
-                        //  border: 1px solid white;
                         padding: 10px 10px 0px;
                         width: 100%;
                         #github-icon {
@@ -128,7 +121,6 @@
                     .title {
                         color: $lightBlue;
                         font-size: 1em;
-                        // font-weight: bold;
                         margin: 5px auto;
                         text-align: left;
                     }
@@ -144,22 +136,17 @@
 
 @media (min-width: 768px) {
     #portfolio {
-        font-weight: lighter;
         margin: 40px auto 10px;
         width: 75%;
         h2 {
-            color: $lightBlue;
             font-size: 3em;
-            font-weight: lighter;
             padding: 8px 5px;
         }
         #grid {
-            // border: 1px solid white;
             @include flex(row, space-evenly);
             flex-wrap: wrap;
             margin: 0 auto;
             .project-container {
-                // border: 1px dotted white;
                 margin: 10px 0;
                 text-align: center;
                 width: 45%;
@@ -241,7 +228,6 @@
             padding: 8px 5px;
         }
         #grid {
-            // border: 1px solid white;
             @include flex(row, center);
             flex-wrap: wrap;
             margin: 0 auto;
@@ -250,7 +236,6 @@
                 text-align: center;
                 width: 30%;
                 .tile {
-                    // border: 1px dotted white;
                     .image-container {
                         background-color: $offWhite;
                         border: 3px solid $offWhite;
