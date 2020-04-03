@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+$turquoise: rgb(100, 215, 255);
+
+#contact-form {
+  background-image: radial-gradient(rgb(180, 180, 180), rgb(61, 61, 61));
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-container {
+  background-color: white;
+  border: 2px solid rgb(61, 61, 61);
+  border-radius: 0.5em;
+  margin: 20px auto 10px;
+  width: 90%;
+}
+
+#header {
+  text-align: center;
+  margin: 30px auto;
+  h1,
+  h4 {
+    font-weight: lighter;
+    padding: 0.3em;
+  }
+  h4 {
+      margin: 0px auto;
+      width: 86%;
+  }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px auto;
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    label,
+    input,
+    textarea {
+        width: 80%;
+        margin: 0px auto;
+    }
+    label {
+        padding: 0.6em;
+        text-align: left;
+    }
+    input,
+    textarea {
+        border: 2px solid $turquoise;
+        border-radius: 5em;
+        font-size: 0.9em;
+        height: 2.5em;
+        padding-left: 1em;
+        &:focus {
+        outline: none;
+        }
+    }
+    textarea {
+        border-radius: 2em;
+        font-family: 'Open Sans', sans-serif;
+        height: 80px;
+    }
+    p {
+        color: rgb(220, 80, 80);
+        font-weight: bold;
+        margin: 8px auto;
+        text-align: center;
+        width: 60%;
+        }
+    #firstName-error,
+    #lastName-error,
+    #email-error,
+    #msg-error {
+        display: none;
+    }
+}
+
+.button-container {
+    margin: 20px auto;
+    text-align: center;
+    width: 80%;
+    button {
+        background-image: linear-gradient(rgb(150, 260, 260), $turquoise);
+        border: 1px solid rgba(180, 180, 180, 0.5);
+        border-radius: 0.5em;
+        box-shadow: -2px 2px 5px rgba(61, 61, 61, 0.8);
+        color: rgb(61, 61, 61);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.9em;
+        font-weight: bolder;
+        padding: 12px 40px;
+        margin: 20px auto;
+    }
+    #form-error, 
+    #form-success {
+        border-radius: 0.5em;
+        box-shadow: -2px 2px 5px rgba(61, 61, 61, 0.8);
+        color: white;
+        display: none;
+        font-size: 0.9em;
+        font-weight: lighter;
+        margin: 10px auto 20px;
+        padding: 8px;
+    }
+    #form-error {
+        background-color: rgb(255, 100, 80);
+        border: 2px solid rgb(220, 80, 80);
+    }
+    #form-success {
+        background-color: rgb(61, 231, 61);
+        border: 2px solid rgb(10, 158, 10);
+    }
+}
+
+@media(min-width: 568px) {
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media(min-width: 768px) {
+    .form-container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-container {
+        width: 60%;
+      }
+      
+      #header {
+        h1,
+        h4 {
+          padding: 0.2em;
+        }
+      }
+      
+      form {
+          label,
+          input,
+          textarea {
+              width: 60%;
+              margin: 2px auto;
+          }
+          label {
+              padding: 0.8em;
+          }
+          input,
+          textarea {
+              font-size: 1em;
+          }
+      }
+      
+      .button-container {
+          width: 50%;
+          button {
+              padding: 12px 60px;
+          }
+      }
+}

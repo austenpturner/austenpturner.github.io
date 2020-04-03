@@ -85,9 +85,13 @@ body {
 
 @import "portfolio";
 
-// ----- CONTACT PAGE STYLES ----- //@extend
+// ----- CONTACT SECTION STYLES ----- //
 
 @import "contact";
+
+// ----- CONTACT FORM STYLES ----- //
+
+@import "form";
 
 // ----- SOCIAL LINKS STYLES ----- //
 
@@ -122,6 +126,20 @@ aside #social-links {
             height: 38px;
             transform: rotate(360deg);
             width: 38px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    aside #social-links {
+        top: 25vh;
+    }
+    .link-icon {
+        height: 36px;
+        width: 36px;
+        &:hover {
+            height: 40px;
+            width: 40px;
         }
     }
 }

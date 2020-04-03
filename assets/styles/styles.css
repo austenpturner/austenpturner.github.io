@@ -870,6 +870,105 @@ header .chevron-container i:hover {
   }
 }
 
+#contact {
+  margin: 40px auto 10px;
+  width: 90%;
+}
+
+#contact h2 {
+  color: #98fad9;
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 8px 5px;
+}
+
+#contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px auto;
+}
+
+#contact div h4,
+#contact div p {
+  color: #f0f0f0;
+  font-weight: lighter;
+}
+
+#contact div h4 {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+#contact div p {
+  font-size: 0.8em;
+  margin: 6px 0;
+}
+
+#contact div button {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#98fad9), to(#31dfa5));
+  background-image: linear-gradient(#98fad9, #31dfa5);
+  border: 1px solid #31dfa5;
+  border-radius: 1em;
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  margin: 14px auto;
+  padding: 16px 20px;
+}
+
+#contact div button a {
+  color: #3d3d3d;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 568px) {
+  #contact {
+    width: 70%;
+  }
+  #contact div button {
+    margin: 20px auto;
+  }
+}
+
+@media (min-width: 768px) {
+  #contact h2 {
+    font-size: 3em;
+  }
+  #contact div h4 {
+    font-size: 1.2em;
+  }
+  #contact div p {
+    font-size: 1em;
+  }
+  #contact div button {
+    font-size: 1em;
+    margin: 30px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  #contact h2 {
+    font-size: 3em;
+  }
+  #contact div h4 {
+    font-size: 1.4em;
+  }
+  #contact div button {
+    font-size: 0.9em;
+    margin: 20px 0;
+    width: 180px;
+  }
+}
+
 #contact-form {
   background-image: radial-gradient(#b4b4b4, #3d3d3d);
   font-family: 'Open Sans', sans-serif;
@@ -1133,6 +1232,20 @@ footer p {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
     width: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  aside #social-links {
+    top: 25vh;
+  }
+  .link-icon {
+    height: 36px;
+    width: 36px;
+  }
+  .link-icon:hover {
+    height: 40px;
+    width: 40px;
   }
 }
 
