@@ -68,65 +68,25 @@
 
 @media (min-width: 568px) {
     #portfolio {
-        font-weight: lighter;
-        margin: 40px auto 10px;
         width: 75%;
         h2 {
-            color: $lightBlue;
-            font-size: 2em;
-            font-weight: lighter;
-            margin: 20px;
-            padding: 8px 5px;
             width: 100%;
         }
         #grid {
             @include flex(row, center);
-            flex-wrap: wrap;
-            margin: 0 auto;
             .project-container {
-                text-align: center;
                 width: 60%;
                 .tile {
                     .image-container {
-                        background-color: $offWhite;
                         height: 260px;
-                        overflow-y: hidden;
-                        width: 100%;
-                        img {
-                            width: 100%;
-                        }
-                    }
-                    .links {
-                        @include flex(row, left);
-                        padding: 10px 10px 0px;
-                        width: 100%;
-                        #github-icon {
-                            height: 30px;
-                            width: 30px;
-                        }
-                        #website-icon {
-                            height: 26px;
-                            margin: 2px 5px;
-                            width: 26px;
-                        }
-                        button {
-                            display: none;
-                        }
                     }
                 }
                 .caption-container {
-                    background: $darkGrey;
-                    color: $offWhite;
-                    padding: 5px 10px 30px;
                     .title {
-                        color: $lightBlue;
                         font-size: 1em;
-                        margin: 5px auto;
-                        text-align: left;
                     }
                     .description {
                         font-size: 0.8em;
-                        text-align: left;
                     }
                 }
             }
@@ -136,30 +96,19 @@
 
 @media (min-width: 768px) {
     #portfolio {
-        margin: 40px auto 10px;
-        width: 75%;
         h2 {
             font-size: 3em;
             padding: 8px 5px;
         }
         #grid {
             @include flex(row, space-evenly);
-            flex-wrap: wrap;
-            margin: 0 auto;
             .project-container {
                 margin: 10px 0;
-                text-align: center;
                 width: 45%;
                 .tile {
                     .image-container {
-                        background-color: $offWhite;
                         border: 3px solid $offWhite;
                         height: 260px;
-                        overflow-y: hidden;
-                        width: 100%;
-                        img {
-                            max-width: 100%;
-                        }
                     }
                     .links {
                         @include flex(column, center);
@@ -202,13 +151,11 @@
                     padding: 10px;
                     .title {
                         color: $darkGrey;
-                        font-size: 1.1em;
                         font-weight: bold;
                         margin: 5px auto;
                     }
                     .description {
                         font-size: 0.9em;
-                        text-align: left;
                     }
                 }
             }
@@ -218,82 +165,27 @@
 
 @media (min-width: 1024px) {
     #portfolio {
-        font-weight: lighter;
-        margin: 40px auto 10px;
         width: 75%;
-        h2 {
-            color: $lightBlue;
-            font-size: 3em;
-            font-weight: lighter;
-            padding: 8px 5px;
-        }
         #grid {
             @include flex(row, center);
-            flex-wrap: wrap;
             margin: 0 auto;
             .project-container {
                 margin: 10px;
-                text-align: center;
                 width: 30%;
                 .tile {
                     .image-container {
-                        background-color: $offWhite;
-                        border: 3px solid $offWhite;
                         height: 220px;
-                        overflow-y: hidden;
-                        width: 100%;
-                        img {
-                            max-width: 100%;
-                        }
                     }
                     .links {
-                        @include flex(column, center);
-                        background-color: rgba(240, 240, 240, 0.7);
-                        color: $darkGrey;
                         height: 220px;
-                        opacity: 0;
-                        padding-top: 20px;
-                        position: absolute;
-                        text-align: center;
-                        top: 0px;
-                        width: 100%;
-                        z-index: 1;
-                        .icon-link {
-                            display: none;
-                        }
-                        &:hover {
-                            opacity: 1;
-                            button {
-                                background-image: linear-gradient($lightBlue, rgb(49, 223, 165));
-                                border: 1px solid rgb(49, 223, 165);
-                                border-radius: 1em;
-                                display: block;
-                                font-family: 'Noto Sans JP', sans-serif;
-                                font-weight: bold;
-                                margin: 14px auto;
-                                padding: 16px 20px;
-                                a {
-                                    color: $darkGrey;
-                                    cursor: pointer;
-                                    text-decoration: none;
-                                }
-                            }
-                        }
                     }
                 }
                 .caption-container {
-                    background: $offWhite;
-                    color: $darkGrey;
-                    padding: 10px;
                     .title {
-                        color: $darkGrey;
                         font-size: 1.1em;
-                        font-weight: bold;
-                        margin: 5px auto;
                     }
                     .description {
                         font-size: 0.9em;
-                        text-align: left;
                     }
                 }
             }

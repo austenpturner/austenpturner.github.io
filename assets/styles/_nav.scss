@@ -9,10 +9,16 @@ nav {
         z-index: 1;
         #logo {
             color: $offWhite;
+            border-bottom: 1px solid transparent;
             font-size: 1em;
             font-weight: lighter;
-            padding-left: 10px;
+            margin-left: 10px;
             text-align: center;
+            transition: font-size 400ms ease-in-out, border-bottom 300ms ease-in-out;
+            &:hover {
+                border-bottom: 2px solid $offWhite;
+                font-size: 1.1em;
+            }
         }
         #nav-symbol {
             cursor: pointer;
@@ -69,13 +75,6 @@ nav {
     left: 100vw;
 }
 
-
-@media (min-width: 768px) {
-    #logo {
-        font-size: 1.2em;
-    }
-}
-
 @media (min-width: 1024px) {
     nav {
         @include flex(row, space-around);
@@ -106,10 +105,10 @@ nav {
                 position: static;
                 li a {
                     color: $offWhite;
-                    font-size: 1.1em;
+                    font-size: 1em;
                     &:hover {
                         border-bottom: 2px solid $offWhite;
-                        font-size: 1.2em; 
+                        font-size: 1.1em; 
                     }
                 }
             }

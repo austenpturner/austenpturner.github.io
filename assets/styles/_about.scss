@@ -1,6 +1,5 @@
 #about {
     font-weight: lighter;
-    // height: 100vh;
     margin: 40px auto 10px;
     width: 90%;
     h2 {
@@ -25,7 +24,6 @@
             margin: 10px 0;
         }
         ul {
-            // align-items: center;
             color: $offWhite;
             @include flex(row, left);
             flex-wrap: wrap;
@@ -37,7 +35,7 @@
                 margin: 8px auto;
                 padding: 8px;
                 text-align: center;
-                width: 46%;
+                width: 100%;
             }
         }
     }
