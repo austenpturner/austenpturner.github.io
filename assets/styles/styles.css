@@ -49,7 +49,7 @@ nav #logo-container {
   padding: 20px;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav #logo-container #logo {
@@ -74,7 +74,7 @@ nav #logo-container #nav-symbol {
   position: absolute;
   right: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav #logo-container .line {
@@ -116,7 +116,7 @@ nav #links-container #nav-links {
   width: 100vw;
   -webkit-transition: left 1000ms ease-in-out;
   transition: left 1000ms ease-in-out;
-  z-index: 2;
+  z-index: 3;
 }
 
 nav #links-container #nav-links li {
@@ -166,7 +166,7 @@ nav #links-container #nav-links li a:hover {
     padding: 20px;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
   }
   nav #logo-container {
     background: #3d3d3d;
