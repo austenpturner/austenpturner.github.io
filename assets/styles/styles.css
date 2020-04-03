@@ -487,35 +487,19 @@ header .chevron-container i:hover {
 #portfolio {
   font-weight: lighter;
   margin: 40px auto 10px;
-  width: 90%;
+  width: 100%;
 }
 
 #portfolio h2 {
   color: #98fad9;
   font-size: 2em;
   font-weight: lighter;
+  margin: 20px;
   padding: 8px 5px;
+  width: 75%;
 }
 
-#portfolio div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#portfolio div .project-container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#portfolio #grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,81 +510,363 @@ header .chevron-container i:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 20px auto;
-  width: 80%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-#portfolio div .project-container .image-container {
+#portfolio #grid .project-container {
+  text-align: center;
+  width: 100%;
+}
+
+#portfolio #grid .project-container .tile .image-container {
   background-color: #f0f0f0;
-  border: 3px solid #f0f0f0;
-  border-radius: 1em;
-  height: 220px;
+  height: 320px;
   overflow-y: hidden;
-  width: 220px;
+  width: 100%;
 }
 
-#portfolio div .project-container .image-container img {
-  max-width: 100%;
+#portfolio #grid .project-container .tile .image-container img {
+  width: 100%;
 }
 
-#portfolio div .project-container p {
+#portfolio #grid .project-container .tile .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 10px 10px 0px;
+  width: 100%;
+}
+
+#portfolio #grid .project-container .tile .links #github-icon {
+  height: 30px;
+  width: 30px;
+}
+
+#portfolio #grid .project-container .tile .links #website-icon {
+  height: 26px;
+  margin: 2px 5px;
+  width: 26px;
+}
+
+#portfolio #grid .project-container .tile .links button {
+  display: none;
+}
+
+#portfolio #grid .project-container .caption-container {
+  background: #3d3d3d;
   color: #f0f0f0;
-  padding: 10px;
+  padding: 5px 10px 30px;
 }
 
-@media (min-height: 400px) {
-  #portfolio {
-    width: 80%;
-  }
+#portfolio #grid .project-container .caption-container .title {
+  color: #98fad9;
+  font-size: 1.1em;
+  margin: 5px auto;
+  text-align: left;
+}
+
+#portfolio #grid .project-container .caption-container .description {
+  font-size: 0.9em;
+  text-align: left;
 }
 
 @media (min-width: 568px) {
   #portfolio {
-    width: 70%;
+    font-weight: lighter;
+    margin: 40px auto 10px;
+    width: 75%;
   }
   #portfolio h2 {
-    font-size: 2.2em;
+    color: #98fad9;
+    font-size: 2em;
+    font-weight: lighter;
+    margin: 20px;
+    padding: 8px 5px;
+    width: 100%;
   }
-  #portfolio div .project-container {
-    padding: 10px;
-    width: 50%;
+  #portfolio #grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 auto;
   }
-  #portfolio div .project-container .image-container {
-    height: 190px;
-    width: 190px;
+  #portfolio #grid .project-container {
+    text-align: center;
+    width: 70%;
+  }
+  #portfolio #grid .project-container .tile .image-container {
+    background-color: #f0f0f0;
+    height: 260px;
+    overflow-y: hidden;
+    width: 100%;
+  }
+  #portfolio #grid .project-container .tile .image-container img {
+    width: 100%;
+  }
+  #portfolio #grid .project-container .tile .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding: 10px 10px 0px;
+    width: 100%;
+  }
+  #portfolio #grid .project-container .tile .links #github-icon {
+    height: 30px;
+    width: 30px;
+  }
+  #portfolio #grid .project-container .tile .links #website-icon {
+    height: 26px;
+    margin: 2px 5px;
+    width: 26px;
+  }
+  #portfolio #grid .project-container .tile .links button {
+    display: none;
+  }
+  #portfolio #grid .project-container .caption-container {
+    background: #3d3d3d;
+    color: #f0f0f0;
+    padding: 5px 10px 30px;
+  }
+  #portfolio #grid .project-container .caption-container .title {
+    color: #98fad9;
+    font-size: 1em;
+    margin: 5px auto;
+    text-align: left;
+  }
+  #portfolio #grid .project-container .caption-container .description {
+    font-size: 0.8em;
+    text-align: left;
   }
 }
 
 @media (min-width: 768px) {
   #portfolio {
-    width: 70%;
+    font-weight: lighter;
+    margin: 40px auto 10px;
+    width: 75%;
   }
   #portfolio h2 {
+    color: #98fad9;
     font-size: 3em;
+    font-weight: lighter;
+    padding: 8px 5px;
   }
-  #portfolio div .project-container {
-    width: 50%;
+  #portfolio #grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 auto;
   }
-  #portfolio div .project-container .image-container {
-    height: 230px;
-    width: 230px;
+  #portfolio #grid .project-container {
+    margin: 10px 0;
+    text-align: center;
+    width: 45%;
+  }
+  #portfolio #grid .project-container .tile .image-container {
+    background-color: #f0f0f0;
+    border: 3px solid #f0f0f0;
+    height: 260px;
+    overflow-y: hidden;
+    width: 100%;
+  }
+  #portfolio #grid .project-container .tile .image-container img {
+    max-width: 100%;
+  }
+  #portfolio #grid .project-container .tile .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: rgba(240, 240, 240, 0.7);
+    color: #3d3d3d;
+    height: 260px;
+    opacity: 0;
+    padding-top: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+  }
+  #portfolio #grid .project-container .tile .links .icon-link {
+    display: none;
+  }
+  #portfolio #grid .project-container .tile .links:hover {
+    opacity: 1;
+  }
+  #portfolio #grid .project-container .tile .links:hover button {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#98fad9), to(#31dfa5));
+    background-image: linear-gradient(#98fad9, #31dfa5);
+    border: 1px solid #31dfa5;
+    border-radius: 1em;
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    margin: 14px auto;
+    padding: 16px 20px;
+  }
+  #portfolio #grid .project-container .tile .links:hover button a {
+    color: #3d3d3d;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #portfolio #grid .project-container .caption-container {
+    background: #f0f0f0;
+    color: #3d3d3d;
+    padding: 10px;
+  }
+  #portfolio #grid .project-container .caption-container .title {
+    color: #3d3d3d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px auto;
+  }
+  #portfolio #grid .project-container .caption-container .description {
+    font-size: 0.9em;
+    text-align: left;
   }
 }
 
 @media (min-width: 1024px) {
   #portfolio {
-    width: 80%;
+    font-weight: lighter;
+    margin: 40px auto 10px;
+    width: 75%;
   }
-  #portfolio div .project-container {
+  #portfolio h2 {
+    color: #98fad9;
+    font-size: 3em;
+    font-weight: lighter;
+    padding: 8px 5px;
+  }
+  #portfolio #grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  #portfolio #grid .project-container {
+    margin: 10px;
+    text-align: center;
     width: 30%;
   }
-  #portfolio div .project-container .image-container,
-  #portfolio div .project-container p {
-    margin: 5px 20px;
+  #portfolio #grid .project-container .tile .image-container {
+    background-color: #f0f0f0;
+    border: 3px solid #f0f0f0;
+    height: 220px;
+    overflow-y: hidden;
+    width: 100%;
   }
-  #portfolio div .project-container .image-container {
-    height: 250px;
-    width: 250px;
+  #portfolio #grid .project-container .tile .image-container img {
+    max-width: 100%;
+  }
+  #portfolio #grid .project-container .tile .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: rgba(240, 240, 240, 0.7);
+    color: #3d3d3d;
+    height: 220px;
+    opacity: 0;
+    padding-top: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+  }
+  #portfolio #grid .project-container .tile .links .icon-link {
+    display: none;
+  }
+  #portfolio #grid .project-container .tile .links:hover {
+    opacity: 1;
+  }
+  #portfolio #grid .project-container .tile .links:hover button {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#98fad9), to(#31dfa5));
+    background-image: linear-gradient(#98fad9, #31dfa5);
+    border: 1px solid #31dfa5;
+    border-radius: 1em;
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    margin: 14px auto;
+    padding: 16px 20px;
+  }
+  #portfolio #grid .project-container .tile .links:hover button a {
+    color: #3d3d3d;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #portfolio #grid .project-container .caption-container {
+    background: #f0f0f0;
+    color: #3d3d3d;
+    padding: 10px;
+  }
+  #portfolio #grid .project-container .caption-container .title {
+    color: #3d3d3d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px auto;
+  }
+  #portfolio #grid .project-container .caption-container .description {
+    font-size: 0.9em;
+    text-align: left;
   }
 }
 
