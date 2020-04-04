@@ -11,16 +11,16 @@ footer {
         @include flex(row, space-around);
         margin: 10px auto;
         width: 50%;
+        .link-icon {
+            height: 40px;
+            padding: 6px;
+            width: 40px;
+        }
     }
     p {
         padding: 8px 0 10px;
         vertical-align: text-bottom;
     }
-}
-.link-icon {
-    height: 40px;
-    padding: 6px;
-    width: 40px;
 }
 
 @media (min-width: 568px) {

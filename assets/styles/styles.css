@@ -1067,15 +1067,15 @@ footer #social-links {
   width: 50%;
 }
 
-footer p {
-  padding: 8px 0 10px;
-  vertical-align: text-bottom;
-}
-
-.link-icon {
+footer #social-links .link-icon {
   height: 40px;
   padding: 6px;
   width: 40px;
+}
+
+footer p {
+  padding: 8px 0 10px;
+  vertical-align: text-bottom;
 }
 
 @media (min-width: 568px) {
