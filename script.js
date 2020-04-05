@@ -4,7 +4,6 @@ const navLinks = document.querySelector('#nav-links');
 
 // Slide nav on and off screen when user clicks nav symbol
 navSymbol.addEventListener('click', () => {
-    console.log('clicked nav symbol');
         if (navLinks.className === 'slide-right') {
         navLinks.classList.remove('slide-right');
         navLinks.classList.add('slide-left');
@@ -12,6 +11,7 @@ navSymbol.addEventListener('click', () => {
         navLinks.classList.remove('slide-left');
         navLinks.classList.add('slide-right');
     }
+    navSymbol.classList.toggle('toggle');
 });
 
 // Slide nav off screen when user clicks nav item

@@ -113,7 +113,7 @@ aside #social-links {
         @include flex(column, start);
         left: 25px;
         top: 20vh;
-        position: fixed;
+        position: absolute;
         z-index: 1;
     }
     .link-icon {

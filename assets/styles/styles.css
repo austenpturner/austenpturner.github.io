@@ -85,6 +85,20 @@ nav #logo-container .line {
   width: 40px;
 }
 
+nav #logo-container .toggle #line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 10px);
+          transform: rotate(-45deg) translate(-5px, 10px);
+}
+
+nav #logo-container .toggle #line2 {
+  opacity: 0;
+}
+
+nav #logo-container .toggle #line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -10px);
+          transform: rotate(45deg) translate(-5px, -10px);
+}
+
 nav #links-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,9 +127,9 @@ nav #links-container #nav-links {
   position: fixed;
   height: calc(100vh - 64px);
   top: 10vh;
-  width: 100vw;
-  -webkit-transition: left 1000ms ease-in-out;
-  transition: left 1000ms ease-in-out;
+  width: 60vw;
+  -webkit-transition: right 1000ms ease-in-out;
+  transition: right 1000ms ease-in-out;
   z-index: 3;
 }
 
@@ -140,11 +154,11 @@ nav #links-container #nav-links li a:hover {
 }
 
 .slide-left {
-  left: 0vw;
+  right: 0vw;
 }
 
 .slide-right {
-  left: 100vw;
+  right: -60vw;
 }
 
 @media (min-width: 1024px) {
@@ -1098,7 +1112,7 @@ footer p {
             justify-content: start;
     left: 25px;
     top: 20vh;
-    position: fixed;
+    position: absolute;
     z-index: 1;
   }
   .link-icon {

@@ -35,6 +35,18 @@ nav {
             margin: 8px;
             width: 40px;
         }
+        .toggle #line1 {
+            transform: rotate(-45deg) translate(-5px, 10px);
+
+        }
+        .toggle #line2 {
+            opacity: 0;
+            
+        }
+        .toggle #line3 {
+            transform: rotate(45deg) translate(-5px, -10px);
+            
+        }
     }
     #links-container {
         @include flex(row, flex-end);
@@ -45,8 +57,8 @@ nav {
             position: fixed;
             height: calc(100vh - 64px);
             top: 10vh;
-            width: 100vw;
-            transition: left 1000ms ease-in-out;
+            width: 60vw;
+            transition: right 1000ms ease-in-out;
             z-index: 3;
             li {
                 margin: 0 auto;
@@ -69,10 +81,10 @@ nav {
 }
 
 .slide-left {
-    left: 0vw;
+    right: 0vw;
 }
 .slide-right {
-    left: 100vw;
+    right: -60vw;
 }
 
 @media (min-width: 1024px) {
