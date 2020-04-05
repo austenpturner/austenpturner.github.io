@@ -208,6 +208,7 @@ nav #links-container #nav-links li a:hover {
     border: none;
     height: 26px;
     position: static;
+    width: 100vw;
   }
   nav #links-container #nav-links li a {
     color: #f0f0f0;
@@ -1061,7 +1062,6 @@ footer {
   color: #f0f0f0;
   font-size: 0.8em;
   font-weight: lighter;
-  margin-top: auto;
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -1112,7 +1112,7 @@ footer p {
             justify-content: start;
     left: 25px;
     top: 20vh;
-    position: absolute;
+    position: fixed;
     z-index: 1;
   }
   .link-icon {
