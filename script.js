@@ -22,3 +22,7 @@ navLinks.addEventListener('click', e => {
     }
 });
 
+AOS.init({
+    duration: 1000
+});
+
