@@ -42,9 +42,9 @@ nav {
         #nav-links {
             @include flex(column, space-around);
             background-color: $lightBlue;
-            position: absolute;
+            position: fixed;
             height: calc(100vh - 64px);
-            top: 64px;
+            top: 10vh;
             width: 100vw;
             transition: left 1000ms ease-in-out;
             z-index: 3;

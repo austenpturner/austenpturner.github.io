@@ -110,9 +110,9 @@ nav #links-container #nav-links {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #98fad9;
-  position: absolute;
+  position: fixed;
   height: calc(100vh - 64px);
-  top: 64px;
+  top: 10vh;
   width: 100vw;
   -webkit-transition: left 1000ms ease-in-out;
   transition: left 1000ms ease-in-out;
