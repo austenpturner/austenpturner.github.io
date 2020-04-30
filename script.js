@@ -20,6 +20,7 @@ navLinks.addEventListener('click', e => {
         navLinks.classList.remove('slide-left');
         navLinks.classList.add('slide-right');
     }
+    navSymbol.classList.toggle('toggle');
 });
 
 AOS.init({
