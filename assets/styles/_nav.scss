@@ -56,7 +56,7 @@ nav {
             background-color: $lightBlue;
             position: fixed;
             height: calc(100vh - 64px);
-            top: 10vh;
+            top: 64px;
             width: 60vw;
             transition: right 1000ms ease-in-out;
             z-index: 3;
